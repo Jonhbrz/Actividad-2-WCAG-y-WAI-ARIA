@@ -5,10 +5,18 @@
 </head>
 <body>
   <h1>Formulario de Registro</h1>
+
   <form>
-    <input type="text" placeholder="Nombre">
-    <input type="email" placeholder="Correo electrónico">
-    <button>Enviar</button>
+    <!-- Se usa label asociado con for/id en lugar de placeholder -->
+    <label for="nombre">Nombre</label>
+    <input id="nombre" type="text" required>
+
+    <label for="email">Correo electrónico</label>
+    <input id="email" type="email" required>
+
+    <!-- Botón con tipo explícito -->
+    <button type="submit">Enviar</button>
   </form>
+
 </body>
 </html>

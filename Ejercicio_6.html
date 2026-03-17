@@ -9,7 +9,12 @@
   </script>
 </head>
 <body>
+
   <button onclick="mostrarNotificacion()">Guardar</button>
-  <div id="notificacion"></div>
+
+  <!-- aria-live permite anunciar cambios dinámicos -->
+  <!-- role="status" indica que es información no crítica -->
+  <div id="notificacion" role="status" aria-live="polite"></div>
+
 </body>
 </html>

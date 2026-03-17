@@ -2,24 +2,31 @@
 <html lang="es">
 <head>
   <title>Menú Interactivo</title>
-  <style>
-    .submenu {
-      display: none;
+  <script>
+    function toggleMenu(btn) {
+      const menu = document.getElementById('submenu');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', !expanded);
+      menu.hidden = expanded;
     }
-    .menu:hover .submenu {
-      display: block;
-    }
-  </style>
+  </script>
 </head>
 <body>
+
   <h1>Menú de Opciones</h1>
-  <div class="menu">
-    <p>Opciones</p>
-    <div class="submenu">
-      <p>Opción 1</p>
-      <p>Opción 2</p>
-      <p>Opción 3</p>
-    </div>
-  </div>
+
+  <!-- Botón con estado accesible -->
+  <button aria-expanded="false" aria-controls="submenu" onclick="toggleMenu(this)">
+    Opciones
+  </button>
+
+  <!-- Lista semántica -->
+  <ul id="submenu" hidden>
+    <li>Opción 1</li>
+    <li>Opción 2</li>
+    <li>Opción 3</li>
+  </ul>
+
 </body>
 </html>
